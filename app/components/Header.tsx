@@ -2,25 +2,25 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
 
-const Header = () => {
-  const contact = [
-    {
-      type: "GitHub",
-      url: "https://github.com/dufren",
-      icon: <GithubIcon size={16} />,
-    },
-    {
-      type: "Linkedin",
-      url: "https://www.linkedin.com/in/ozgur-cokceken/",
-      icon: <LinkedinIcon size={16} />,
-    },
-    {
-      type: "Email",
-      url: "mailto:ozgurcokckn@gmail.com",
-      icon: <MailIcon size={16} />,
-    },
-  ];
+const contact = [
+  {
+    type: "GitHub",
+    url: "https://github.com/dufren",
+    icon: <GithubIcon size={16} />,
+  },
+  {
+    type: "Linkedin",
+    url: "https://www.linkedin.com/in/ozgur-cokceken/",
+    icon: <LinkedinIcon size={16} />,
+  },
+  {
+    type: "Email",
+    url: "mailto:ozgurcokckn@gmail.com",
+    icon: <MailIcon size={16} />,
+  },
+];
 
+const Header = () => {
   return (
     <header className="mb-8">
       <h1 className="mb-4 text-2xl md:text-3xl lg:text-5xl font-extrabold text-center sm:text-left">
