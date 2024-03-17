@@ -23,7 +23,7 @@ const contact = [
 const Header = () => {
   return (
     <header className="mb-8">
-      <h1 className="mb-4 text-2xl md:text-3xl lg:text-5xl font-extrabold text-center sm:text-left">
+      <h1 className="mb-4 text-2xl md:text-3xl lg:text-5xl font-bold text-center sm:text-left">
         Özgür Çokçeken
       </h1>
       <nav className="flex justify-center md:justify-end">
