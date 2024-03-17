@@ -29,7 +29,7 @@ const experiences = [
       title: "Web Developer",
     },
     description:
-      "Shortly before graduation, I started working as a Web Developer at my university. During this time, while maintaining the university&apos;s needs, I also began learning React and successfully completed courses provided by Meta, earning certificates.",
+      "Shortly before graduation, I started working as a Web Developer at my university. During this time, while maintaining the universit's needs, I also began learning React and successfully completed courses provided by Meta, earning certificates.",
   },
   {
     time: "March 2022 - June 2022 · 4 Month",
@@ -53,7 +53,7 @@ export default function Home() {
 
           <p className="mb-5 text-md sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
             I develop things as a Specialist Frontend Developer at{" "}
-            <span className="font-extrabold">Octet Turkey</span>. Previously, I
+            <span className="font-extrabold">Octet Türkiye</span>. Previously, I
             worked as a Junior Frontend Developer at{" "}
             <span className="font-extrabold">ParamTech</span>.
           </p>
