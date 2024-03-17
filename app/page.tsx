@@ -5,7 +5,7 @@ const experiences = [
     time: "March 2024 - Current",
     company: {
       name: "Octet Turkey",
-      url: "https://www.octet.com",
+      url: "https://www.octet.com.tr/",
       title: "Specialist Frontend Developer",
     },
     description:
@@ -15,7 +15,7 @@ const experiences = [
     time: "May 2023 - March 2024 · 11 Month",
     company: {
       name: "ParamTech",
-      url: "https://param.eu",
+      url: "https://param.com.tr/",
       title: "Junior Frontend Developer",
     },
     description:
@@ -25,7 +25,7 @@ const experiences = [
     time: "June 2022 - May 2023 · 1 Year",
     company: {
       name: "Istinye University",
-      url: "https://www.istinye.edu.tr/en",
+      url: "https://www.istinye.edu.tr",
       title: "Web Developer",
     },
     description:
