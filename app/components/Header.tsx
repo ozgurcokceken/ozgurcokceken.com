@@ -5,7 +5,7 @@ import { ArrowUpRight, GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
 const contact = [
   {
     type: "GitHub",
-    url: "https://github.com/dufren",
+    url: "https://github.com/ozgurcokceken",
     icon: <GithubIcon size={16} />,
   },
   {
