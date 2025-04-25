@@ -1,103 +1,167 @@
-import Link from "next/link";
+'use client'
+import { motion } from 'motion/react'
+import { Spotlight } from '@/components/ui/spotlight'
+import { Magnetic } from '@/components/ui/magnetic'
 
-const experiences = [
-  {
-    time: "March 2024 - Current",
-    company: {
-      name: "Octet Turkey",
-      url: "https://www.octet.com.tr/",
-      title: "Specialist Frontend Developer",
-    },
-    description:
-      "I joined Octet Turkey as a Specialist Frontend Developer. Here, I focused on developing user-friendly and interactive interfaces using modern web technologies in the financial technology field.",
-  },
-  {
-    time: "May 2023 - March 2024 · 11 Month",
-    company: {
-      name: "ParamTech",
-      url: "https://param.com.tr/",
-      title: "Junior Frontend Developer",
-    },
-    description:
-      "My first step into Frontend Developer carrer. I worked on developing project called 'BackOffice'. Project mainly focuses internal staff needs. I learned a lot about React.js and Next.js during this time. I also had the opportunity to work with a great team.",
-  },
-  {
-    time: "June 2022 - May 2023 · 1 Year",
-    company: {
-      name: "Istinye University",
-      url: "https://www.istinye.edu.tr",
-      title: "Web Developer",
-    },
-    description:
-      "Shortly before graduation, I started working as a Web Developer at my university. During this time, while maintaining the universit's needs, I also began learning React and successfully completed courses provided by Meta, earning certificates.",
-  },
-  {
-    time: "March 2022 - June 2022 · 4 Month",
-    company: {
-      name: "Finartz",
-      url: "https://finartz.com",
-      title: "Intern",
-    },
-    description: "I joined Finartz for my university internship program.",
-  },
-];
+import { WORK_EXPERIENCE, EMAIL, SOCIAL_LINKS } from './data'
 
-export default function Home() {
+const VARIANTS_CONTAINER = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const VARIANTS_SECTION = {
+  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+}
+
+const TRANSITION_SECTION = {
+  duration: 0.3,
+}
+
+function MagneticSocialLink({
+  children,
+  link,
+}: Readonly<{
+  children: React.ReactNode
+  link: string
+}>) {
   return (
-    <main>
-      <article>
-        <div className="text-center sm:text-left">
-          <p className="mb-5 text-md sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
-            Hey👋 I&apos;m a frontend developer based in Turkey, Istanbul.
-          </p>
+    <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
+      <a
+        href={link}
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+      >
+        {children}
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-3 w-3"
+        >
+          <path
+            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+            fill="currentColor"
+            fillRule="evenodd"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+      </a>
+    </Magnetic>
+  )
+}
 
-          <p className="mb-5 text-md sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
-            I develop things as a Specialist Frontend Developer at{" "}
-            <span className="font-extrabold">Octet Türkiye</span>. Previously, I
-            worked as a Junior Frontend Developer at{" "}
-            <span className="font-extrabold">ParamTech</span>.
-          </p>
-
-          <p className="mb-5 text-md sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
-            I enjoy working with{" "}
-            <span className="font-extrabold">React.js</span> &{" "}
-            <span className="font-extrabold">Next.js</span> and crafting
-            beatiful frontend experiences.
+export default function Personal() {
+  return (
+    <motion.main
+      className="space-y-12"
+      variants={VARIANTS_CONTAINER}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-3 text-lg font-medium">About me</h3>
+        <div className="flex flex-col gap-4">
+          <p className="text-zinc-600 dark:text-zinc-400">
+            I am a passionate Frontend Developer with experience in fintech,
+            specializing in building scalable, efficient, and user-friendly web
+            applications.
           </p>
         </div>
-      </article>
+      </motion.section>
 
-      <hr />
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-3 text-lg font-medium">Now</h3>
+        <div className="flex flex-col gap-1">
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Enhancing back-office applications to streamline internal
+            operations.
+          </p>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Improving client-facing applications to deliver better user
+            experiences.
+          </p>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Building custom UI kits to ensure design consistency and reusability
+            across projects.
+          </p>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Developing email automation systems, including dynamic email-PDF
+            generation integrated with backend services.
+          </p>
+        </div>
+      </motion.section>
 
-      <div className="my-5">
-        <h1 className="mb-5 text-2xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center sm:text-left">
-          Experience
-        </h1>
-
-        <ol className="relative border-s border-black">
-          {experiences.map((experience, index) => (
-            <li key={index} className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 bg-black"></div>
-              <time className="mb-1 text-sm md:text-md lg:text-xl font-normal leading-none text-gray-500">
-                {experience.time}
-              </time>
-              <h3 className="text-md md:text-lg lg:text-2xl font-semibold">
-                <Link
-                  className="relative w-fit after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-                  href={experience.company.url}
-                  target="_blank"
-                >
-                  {experience.company.name}
-                </Link>{" "}
-                - {experience.company.title}
-              </h3>
-              <p className="mb-4 text-md md:text-lg lg:text-xl font-normal text-gray-700">
-                {experience.description}
-              </p>
-            </li>
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <div className="flex flex-col space-y-2">
+          {WORK_EXPERIENCE.map((job) => (
+            <a
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              href={job.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={job.id}
+            >
+              <Spotlight
+                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {job.title}
+                    </h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                      {job.company}
+                    </p>
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-400">
+                    {job.start} - {job.end}
+                  </p>
+                </div>
+              </div>
+            </a>
           ))}
-        </ol>
-      </div>
-    </main>
-  );
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Connect</h3>
+        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+          Feel free to contact me at{' '}
+          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
+            {EMAIL}
+          </a>
+        </p>
+        <div className="flex items-center justify-start space-x-3">
+          {SOCIAL_LINKS.map((link) => (
+            <MagneticSocialLink key={link.label} link={link.link}>
+              {link.label}
+            </MagneticSocialLink>
+          ))}
+        </div>
+      </motion.section>
+    </motion.main>
+  )
 }
