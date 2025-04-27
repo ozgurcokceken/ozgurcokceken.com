@@ -15,7 +15,7 @@ type SocialLink = {
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Octet Turkey',
-    title: 'Mid Frontend Developer',
+    title: 'Mid Front-end Developer',
     start: 'March 2024',
     end: 'Present',
     link: 'https://www.octet.com.tr',
@@ -23,7 +23,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'ParamTech',
-    title: 'Jr. Frontend Developer',
+    title: 'Jr. Front-end Developer',
     start: 'May 2023',
     end: 'March 2024',
     link: 'https://paramtech.com.tr',
