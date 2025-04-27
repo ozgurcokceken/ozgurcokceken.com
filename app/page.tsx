@@ -124,7 +124,7 @@ export default function Personal() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
+                <div className="relative flex w-full flex-row justify-between gap-2">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title}
