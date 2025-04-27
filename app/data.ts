@@ -39,7 +39,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'Finartz',
-    title: 'Front-end Developer Intern',
+    title: 'Intern Front-end Developer',
     start: 'March 2022',
     end: 'June 2022',
     link: 'https://finartz.com',
